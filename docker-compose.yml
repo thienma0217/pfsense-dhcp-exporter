@@ -1,0 +1,9 @@
+services:
+  pfsense-dhcp-exporter:
+    build: .
+    image: pfsense-dhcp-exporter:latest
+    container_name: pfsense-dhcp-exporter
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9719:9719"
